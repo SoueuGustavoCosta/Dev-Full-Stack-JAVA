@@ -1,0 +1,293 @@
+:root {
+  --bg: #0f1220;
+  --bg-alt: #171b2e;
+  --card: #1e2338;
+  --text: #f1f3fb;
+  --muted: #9aa2c0;
+  --primary: #7c5cff;
+  --primary-dark: #5f3fe0;
+  --accent: #ffb020;
+  --success: #33d17a;
+  --error: #ff5c7a;
+  --radius: 16px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: radial-gradient(circle at top, var(--bg-alt), var(--bg));
+  color: var(--text);
+  padding: 16px;
+}
+
+.screen {
+  display: none;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.screen.active {
+  display: block;
+  animation: fadeIn .4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+.start-card {
+  margin-top: 8vh;
+  text-align: center;
+}
+
+h1 { font-size: 1.8rem; margin: 0 0 8px; }
+.subtitle { color: var(--muted); margin-bottom: 20px; }
+
+.professor-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--bg-alt);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.professor-avatar { font-size: 2rem; line-height: 1; }
+.professor-speech { margin: 0; color: var(--text); }
+
+label { display: block; text-align: left; margin-bottom: 6px; color: var(--muted); font-size: .9rem; }
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #2c3252;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .15s ease, opacity .15s ease;
+  text-decoration: none;
+}
+
+.btn:disabled { opacity: .4; cursor: not-allowed; }
+.btn:not(:disabled):hover { transform: translateY(-2px); }
+
+.btn-primary { background: var(--primary); color: #fff; width: 100%; }
+.btn-secondary { background: transparent; color: var(--muted); border: 1px solid #2c3252; width: 100%; margin-top: 10px; }
+.btn-link { background: transparent; color: var(--accent); border: 1px solid var(--accent); width: 100%; margin-top: 10px; text-align: center; box-sizing: border-box; }
+
+/* TRILHA */
+.trail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.trail-header h2 { margin: 0; font-size: 1.2rem; }
+#trail-progress-text { margin: 4px 0 0; color: var(--muted); font-size: .9rem; }
+
+.xp-box {
+  background: var(--card);
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.progress-bar-wrap {
+  background: var(--bg-alt);
+  border-radius: 10px;
+  height: 12px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transition: width .5s ease;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.badge {
+  background: var(--card);
+  border: 1px solid #2c3252;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: .85rem;
+}
+
+.trail {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.trail-step {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--card);
+  border-radius: 12px;
+  padding: 14px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color .2s ease;
+}
+
+.trail-step:hover { border-color: var(--primary); }
+
+.trail-step.locked { opacity: .45; cursor: not-allowed; }
+.trail-step.locked:hover { border-color: transparent; }
+
+.trail-step.done { border-color: var(--success); }
+.trail-step.current { border-color: var(--accent); }
+
+.trail-step .icon { font-size: 1.6rem; }
+.trail-step .info { flex: 1; }
+.trail-step .info .name { font-weight: 600; }
+.trail-step .info .status { font-size: .8rem; color: var(--muted); }
+
+/* FASE */
+.phase-container { padding-top: 4px; }
+.phase-summary { color: var(--muted); }
+
+.phase-topics {
+  margin: 0 0 16px;
+  padding-left: 20px;
+}
+
+.phase-topics li { margin-bottom: 4px; }
+
+.question-block {
+  background: var(--bg-alt);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 14px;
+}
+
+.question-block h4 { margin: 0 0 10px; }
+
+.option-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  border: 1px solid #2c3252;
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  font-size: .95rem;
+}
+
+.option-btn:hover:not(:disabled) { border-color: var(--primary); }
+.option-btn.correct { background: rgba(51,209,122,.15); border-color: var(--success); }
+.option-btn.wrong { background: rgba(255,92,122,.15); border-color: var(--error); }
+.option-btn:disabled { cursor: default; }
+
+.feedback { margin-top: 8px; font-size: .9rem; }
+.feedback.correct { color: var(--success); }
+.feedback.wrong { color: var(--error); }
+
+textarea {
+  width: 100%;
+  min-height: 80px;
+  border-radius: 8px;
+  border: 1px solid #2c3252;
+  background: var(--bg);
+  color: var(--text);
+  padding: 10px;
+  font-family: inherit;
+  font-size: .95rem;
+  resize: vertical;
+  margin-bottom: 8px;
+}
+
+.final-card { text-align: center; }
+.final-stats { color: var(--muted); margin-bottom: 16px; }
+.final-actions { display: flex; flex-direction: column; }
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--card);
+  border: 1px solid var(--primary);
+  padding: 10px 18px;
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease, transform .3s ease;
+  z-index: 20;
+  max-width: 90vw;
+  text-align: center;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+#confetti-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 30;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -10px;
+  width: 8px;
+  height: 14px;
+  opacity: .9;
+  animation: confetti-fall linear forwards;
+}
+
+@keyframes confetti-fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: .2;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.4rem; }
+  .card { padding: 18px; }
+}
