@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🚀 Jornada Java Full Stack</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- TELA INICIAL -->
+<section id="screen-start" class="screen active">
+  <div class="card start-card">
+    <h1>🚀 Jornada Java Full Stack</h1>
+    <p class="subtitle">Um mini-jogo educativo para virar Full Stack Developer</p>
+    <div class="professor-box">
+      <span class="professor-avatar">🎓</span>
+      <p id="professor-welcome" class="professor-speech"></p>
+    </div>
+    <label for="player-name">Como podemos te chamar?</label>
+    <input type="text" id="player-name" placeholder="Seu nome" maxlength="20" />
+    <button id="btn-start" class="btn btn-primary">Começar Jornada</button>
+  </div>
+</section>
+
+<!-- TRILHA -->
+<section id="screen-trail" class="screen">
+  <header class="trail-header">
+    <div>
+      <h2 id="trail-player-name"></h2>
+      <p id="trail-progress-text">Fase 0 de 17</p>
+    </div>
+    <div class="xp-box">
+      <span>⭐ XP: <span id="xp-total">0</span></span>
+    </div>
+  </header>
+
+  <div class="progress-bar-wrap">
+    <div id="progress-bar" class="progress-bar"></div>
+  </div>
+
+  <div id="badges" class="badges"></div>
+
+  <div id="trail" class="trail"></div>
+</section>
+
+<!-- FASE (MODAL) -->
+<section id="screen-phase" class="screen">
+  <div class="phase-container">
+    <div class="professor-box">
+      <span class="professor-avatar">🎓</span>
+      <p id="phase-joke" class="professor-speech"></p>
+    </div>
+
+    <div class="card phase-card">
+      <h2 id="phase-title"></h2>
+      <p id="phase-summary" class="phase-summary"></p>
+      <ul id="phase-topics" class="phase-topics"></ul>
+
+      <div id="questions-area"></div>
+
+      <button id="btn-next-phase" class="btn btn-primary" disabled>Próxima Etapa ➡️</button>
+      <button id="btn-back-trail" class="btn btn-secondary">Voltar para a trilha</button>
+    </div>
+  </div>
+</section>
+
+<!-- TELA FINAL -->
+<section id="screen-final" class="screen">
+  <div class="card final-card">
+    <h1>PARABÉNS! 🎓</h1>
+    <div class="professor-box">
+      <span class="professor-avatar">🎓</span>
+      <p id="final-message" class="professor-speech"></p>
+    </div>
+    <p id="final-stats" class="final-stats"></p>
+    <div id="final-badges" class="badges"></div>
+    <div class="final-actions">
+      <button id="btn-restart" class="btn btn-secondary">Recomeçar Jornada</button>
+      <button id="btn-share" class="btn btn-primary">Compartilhar Certificado</button>
+      <a id="btn-repo" class="btn btn-link" href="#" target="_blank" rel="noopener">GitHub do Projeto</a>
+    </div>
+  </div>
+</section>
+
+<div id="confetti-layer"></div>
+<div id="toast" class="toast"></div>
+
+<script src="js/professor.js"></script>
+<script src="js/phases.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
