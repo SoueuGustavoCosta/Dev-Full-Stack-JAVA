@@ -2,7 +2,7 @@
 
 Mini-jogo educativo e interativo que ensina o roadmap completo para se tornar um desenvolvedor Java Full Stack, guiado pelo Professor **"Bug Master"** 🎓.
 
-Jogue online pelo GitHub Pages (ative em Settings → Pages, branch `main`, pasta `/`) ou abra `index.html` diretamente no navegador.
+🎮 **Jogue agora:** https://soueugustavocosta.github.io/Dev-Full-Stack-JAVA/
 
 ## Como jogar
 
